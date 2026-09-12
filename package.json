@@ -1,0 +1,6 @@
+{
+  "name": "yug-portfolio-ask-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny serverless proxy so the portfolio's Ask widget can call a real LLM without exposing an API key in the static site."
+}
