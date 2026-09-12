@@ -5,9 +5,11 @@
 // static site on GitHub Pages; this function deploys separately (see the
 // README in this folder) and the frontend calls its URL over fetch().
 //
-// Model: Groq's OpenAI-compatible endpoint, llama-3.1-8b-instant (fast,
+// Model: Groq's OpenAI-compatible endpoint, openai/gpt-oss-20b (fast,
 // generous free tier as of writing). Swap the URL/model/auth header below
-// if you'd rather use a different provider (Gemini, OpenRouter, etc).
+// if you'd rather use a different provider (Gemini, OpenRouter, etc), or a
+// different Groq model — check console.groq.com/docs/models for current
+// production model IDs, since free-tier model availability changes.
 
 const KNOWLEDGE_BASE = `
 Yug Sharma — Backend Engineer, 5 years of experience. Career: Tata Consultancy
@@ -122,7 +124,7 @@ module.exports = async (req, res) => {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
+        model: 'openai/gpt-oss-20b',
         temperature: 0.4,
         max_tokens: 220,
         messages: [
